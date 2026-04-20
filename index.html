@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPYComers | Sistema comercial profesional</title>
+  <meta name="description" content="SPYComers: ventas, compras, clientes, proveedores, stock, cajas, productos con stock bajo y formas de pago." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <img src="assets/logo-spycomers.jpg" alt="Logo SPYComers" />
+        <div class="brand-text">
+          <strong>SPYComers</strong>
+          <span>Sistema de gestión comercial</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#modulos">Módulos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a href="#contacto" class="btn btn-primary top-btn">Solicitar demo</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#modulos">Módulos</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn btn-primary">Solicitar demo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">HECHO PARA NEGOCIOS</span>
+          <h1>
+            Un sistema comercial
+            <span>moderno, y claro para controlar mejor tu negocio</span>
+          </h1>
+          <p>
+            SPYComers te ayuda a gestionar ventas, compras, clientes, proveedores, stock, cajas,
+            productos con stock bajo y formas de pago desde un solo lugar.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">Solicitar demo</a>
+            <a href="#modulos" class="btn btn-secondary">Ver módulos</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>Todo en uno</strong>
+              <span>Ventas, stock, compras y reportes</span>
+            </div>
+            <div class="stat-card">
+              <strong>Digitalizá tu negocio</strong>
+              <span>Más control, más orden y mejor seguimiento</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="screenshot-slider">
+            <div class="window-bar">
+              <span></span><span></span><span></span>
+            </div>
+
+            <div class="slider-head">
+              <div>
+                <p class="mini-label">Vista real del sistema</p>
+                <h3>SPYComers en funcionamiento</h3>
+              </div>
+            </div>
+
+            <div class="slider-wrapper">
+              <button class="slider-btn prev" id="prevSlide" aria-label="Anterior">‹</button>
+
+              <div class="slides-container" id="slidesContainer">
+                <img src="assets/Captura de pantalla (3247).png" alt="SPYComers" class="slide active">
+                <img src="assets/Captura de pantalla (3257).png" alt="SPYComers" class="slide">
+                <img src="assets/Captura de pantalla (3252).png" alt="SPYComers" class="slide">
+                <img src="assets/Captura de pantalla (3256).png" alt="SPYComers" class="slide">
+                <img src="assets/Captura de pantalla (3255).png" alt="SPYComers" class="slide">
+              </div>
+
+              <button class="slider-btn next" id="nextSlide" aria-label="Siguiente">›</button>
+            </div>
+
+            <div class="slider-dots" id="sliderDots">
+              <button class="dot active" data-slide="0"></button>
+              <button class="dot" data-slide="1"></button>
+              <button class="dot" data-slide="2"></button>
+              <button class="dot" data-slide="3"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="beneficios">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow eyebrow-blue">POR QUÉ ELEGIR SPYCOMERS</span>
+      <h2 style="text-align: justify;">
+  Más control, más orden, resultados visibles.
+</h2>
+
+<p style="text-align: justify;">
+  SPYComers está diseñado para simplificar tu negocio, mejorar tus ventas
+  y darte el control completo en tiempo real.
+</p>
+    </div>
+
+    <div class="benefits-grid">
+
+      <article class="glass-card">
+        <div class="icon-circle">✓</div>
+        <h3>Imagen profesional</h3>
+        <p>Transmití confianza con un sistema moderno y ordenado frente a tus clientes.</p>
+      </article>
+
+      <article class="glass-card">
+        <div class="icon-circle">⚡</div>
+        <h3>Ventas más rápidas</h3>
+        <p>Agilizá la atención y evitá errores en cada venta.</p>
+      </article>
+
+      <article class="glass-card">
+        <div class="icon-circle">📦</div>
+        <h3>Control de stock</h3>
+        <p>Sabé siempre qué tenés disponible y evitá pérdidas.</p>
+      </article>
+
+      <article class="glass-card">
+        <div class="icon-circle">📊</div>
+        <h3>Reportes claros</h3>
+        <p>Tomá decisiones con datos reales de tu negocio.</p>
+      </article>
+
+      <article class="glass-card">
+        <div class="icon-circle">🧠</div>
+        <h3>Fácil de usar</h3>
+        <p>No necesitás ser experto, todo es simple e intuitivo.</p>
+      </article>
+
+      <article class="glass-card">
+        <div class="icon-circle">🔒</div>
+        <h3>Mayor control</h3>
+        <p>Reducí errores y tené todo organizado en un solo lugar.</p>
+      </article>
+
+    </div>
+
+    <!-- FRASE FINAL -->
+    <div style="text-align:center; margin-top:40px;">
+      <p style="font-size:1.2rem; font-weight:600; color:#1e293b;">
+        "SPYComers no es solo un sistema, es la herramienta que transforma tu negocio."
+      </p>
+    </div>
+
+  </div>
+</section>
+
+    <section class="section" id="modulos">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow eyebrow-blue">MÓDULOS</span>
+      <h2>Un sistema completo</h2>
+      <p>Lo necesario para tener una mejor gestión y control de nu negocio, sin importar dónde estés.</p>
+    </div>
+
+    <div class="modules-grid">
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-speedometer2"></i></div>
+        <div>
+          <strong>Dashboard</strong>
+          <span>Resumen general del sistema</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-cart-check"></i></div>
+        <div>
+          <strong>Ventas</strong>
+          <span>Tickets y control de ventas</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-people"></i></div>
+        <div>
+          <strong>Clientes</strong>
+          <span>Historial y seguimiento</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-cash-stack"></i></div>
+        <div>
+          <strong>Caja</strong>
+          <span>Apertura, cierre y control diario</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-truck"></i></div>
+        <div>
+          <strong>Proveedores</strong>
+          <span>Gestión de proveedores</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-clipboard-check"></i></div>
+        <div>
+          <strong>Pedido a Proveedor</strong>
+          <span>Creación y seguimiento de pedidos</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-list-check"></i></div>
+        <div>
+          <strong>Lista de Pedidos</strong>
+          <span>Control de pedidos realizados</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-box-seam"></i></div>
+        <div>
+          <strong>Productos</strong>
+          <span>Catálogo con precios e IVA</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-tags"></i></div>
+        <div>
+          <strong>Categorías</strong>
+          <span>Organización de productos</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-bag"></i></div>
+        <div>
+          <strong>Compras</strong>
+          <span>Control de facturas y costos</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-wallet2"></i></div>
+        <div>
+          <strong>Cuentas a Pagar</strong>
+          <span>Control de deudas y vencimientos</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-credit-card"></i></div>
+        <div>
+          <strong>Formas de Pago</strong>
+          <span>Métodos de cobro y pago</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-bar-chart"></i></div>
+        <div>
+          <strong>Reportes</strong>
+          <span>Análisis y estadísticas</span>
+        </div>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon"><i class="bi bi-gear"></i></div>
+        <div>
+          <strong>Panel Administrativo</strong>
+          <span>Configuración del sistema</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+    <section class="section section-highlight">
+      <div class="container stats-wrap">
+        <div class="big-stat">
+          <strong>13</strong>
+          <span>Módulos</span>
+        </div>
+        <div class="big-stat">
+          <strong>100%</strong>
+          <span>Diseño responsive</span>
+        </div>
+        <div class="big-stat">
+          <strong>24/7</strong>
+          <span>Presentación disponible online</span>
+        </div>
+      </div>
+    </section>
+
+<section class="section contact-section" id="contacto">
+  <div class="container contact-card">
+    <div class="contact-copy">
+      <span class="eyebrow eyebrow-blue">CONTACTO</span>
+      <h2>¿Listo para digitalizar tu negocio y pasar al siguiente nivel?</h2>
+      <p>
+        Completá el formulario y te contactaremos para mostrarte cómo SPYComers
+        puede ayudarte a organizar mejor tu negocio.
+      </p>
+    </div>
+
+    <div class="contact-form-wrap">
+      <form class="contact-form" id="whatsappForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="text" id="telefono" name="telefono" placeholder="Ej: 0981 123 456" required>
+          </div>
+
+          <div class="form-group">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Opcional">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Opcional">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="5"
+            placeholder="Contanos qué tipo de negocio tenés o qué necesitás"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Enviar por WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div class="footer-brand">
+        <img src="assets/logo-spycomers.jpg" alt="SPYComers" />
+        <div>
+          <strong>SPYComers</strong>
+        </div>
+      </div>
+      <p>© 2026 SPYComers · Paraguay</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
