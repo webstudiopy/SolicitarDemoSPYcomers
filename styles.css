@@ -936,3 +936,29 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+#modulos .module-card {
+  text-align: center;
+  align-items: center;
+}
+
+#modulos .module-card > div:last-child {
+  width: 100%;
+  text-align: center;
+}
+
+#modulos .module-card strong {
+  display: block;
+  text-align: center;
+}
+
+#modulos .module-card span {
+  display: block;
+  text-align: center;
+}
+#modulos .module-card {
+  flex-direction: column;
+  justify-content: center;
+}
+
