@@ -962,3 +962,61 @@ body {
   justify-content: center;
 }
 
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* BOTONES IGUALES */
+.hero-buttons .btn {
+  flex: 1;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: row !important;
+  }
+}
+
+
+/* CONTENEDOR */
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* BOTONES */
+.hero-buttons .btn {
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 📱 CELULAR → uno al lado del otro */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+
+  .hero-buttons .btn {
+    flex: 1;
+  }
+}
+
+/* 💻 PC → tamaño natural (no estirados feos) */
+@media (min-width: 769px) {
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .hero-buttons .btn {
+    flex: unset;
+    min-width: 180px;
+  }
+}
