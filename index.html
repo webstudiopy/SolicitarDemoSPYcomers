@@ -10,6 +10,138 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* Flyer dentro del hero, al lado del texto */
+    .flyer-hero-visual {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flyer-hero-visual img {
+      width: 80%;
+      max-width: 380px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+    }
+
+    /* Sección del carrusel, ahora debajo del hero */
+    .carousel-section {
+      padding: 60px 0;
+    }
+    .carousel-section .screenshot-slider {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Transición fade profesional para el carrusel (autocontenida) */
+    .slides-container { position: relative; }
+    .slides-container .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      pointer-events: none;
+    }
+    .slides-container .slide.active {
+      position: relative;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Íconos de beneficios sin fondo, look profesional */
+    .benefits-grid .icon-circle {
+      background: none;
+      width: auto;
+      height: auto;
+      font-size: 2rem;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    /* Reducir espacio en blanco excesivo entre Módulos y Estadísticas */
+    #modulos { padding-bottom: 0 !important; margin-bottom: 0 !important; }
+    .section-highlight { padding-top: 24px !important; margin-top: 0 !important; }
+
+    /* Formulario de suscripción con look profesional */
+    .contact-section {
+      padding: 60px 0 80px;
+    }
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+      border: 1px solid #eef2f7;
+    }
+    .contact-copy h2 {
+      font-size: 1.9rem;
+      line-height: 1.25;
+      margin: 12px 0 14px;
+      color: #0f172a;
+    }
+    .contact-copy p {
+      color: #55617a;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+    .contact-form-wrap {
+      background: #f8fafc;
+      border: 1px solid #e6eaf1;
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .contact-form .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .contact-form .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    .contact-form .form-group input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d7dde6;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      background: #ffffff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-sizing: border-box;
+    }
+    .contact-form .form-group input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+    .contact-form .btn-block {
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+    }
+    @media (max-width: 860px) {
+      .contact-card { grid-template-columns: 1fr; padding: 32px 24px; }
+      .contact-form .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <div class="page-bg"></div>
@@ -27,7 +159,6 @@
       <nav class="desktop-nav">
         <a href="#modulos">Módulos</a>
         <a href="#beneficios">Beneficios</a>
-        <a href="#contacto">Contacto</a>
       </nav>
 
       <a href="#contacto" class="btn btn-primary top-btn">Solicitar demo</a>
@@ -49,7 +180,7 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">HECHO PARA NEGOCIOS</span>
+          <strong>HECHO PARA NEGOCIOS</strong>
           <h1>
             Un sistema comercial
             <span>moderno, y claro para controlar mejor tu negocio</span>
@@ -72,38 +203,46 @@
         </div>
 
         <div class="hero-visual">
-          <div class="screenshot-slider">
-            <div class="window-bar">
-              <span></span><span></span><span></span>
+          <div class="flyer-hero-visual">
+            <img src="assets/flyer.png" alt="SPYComers - Sistema de Gestión">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section carousel-section" id="capturas">
+      <div class="container">
+        <div class="screenshot-slider">
+          <div class="window-bar">
+            <span></span><span></span><span></span>
+          </div>
+
+          <div class="slider-head">
+            <div>
+              <p class="mini-label">Vista real del sistema</p>
+              <h3>SPYComers en funcionamiento</h3>
+            </div>
+          </div>
+
+          <div class="slider-wrapper">
+            <button class="slider-btn prev" id="prevSlide" aria-label="Anterior">‹</button>
+
+            <div class="slides-container" id="slidesContainer">
+              <img src="assets/Captura de pantalla (3325).png" alt="SPYComers" class="slide active">
+              <img src="assets/Captura de pantalla (3257).png" alt="SPYComers" class="slide">
+              <img src="assets/Captura de pantalla (3252).png" alt="SPYComers" class="slide">
+              <img src="assets/Captura de pantalla (3256).png" alt="SPYComers" class="slide">
+              <img src="assets/Captura de pantalla (3255).png" alt="SPYComers" class="slide">
             </div>
 
-            <div class="slider-head">
-              <div>
-                <p class="mini-label">Vista real del sistema</p>
-                <h3>SPYComers en funcionamiento</h3>
-              </div>
-            </div>
+            <button class="slider-btn next" id="nextSlide" aria-label="Siguiente">›</button>
+          </div>
 
-            <div class="slider-wrapper">
-              <button class="slider-btn prev" id="prevSlide" aria-label="Anterior">‹</button>
-
-              <div class="slides-container" id="slidesContainer">
-                <img src="assets/Captura de pantalla (3325).png" alt="SPYComers" class="slide active">
-                <img src="assets/Captura de pantalla (3257).png" alt="SPYComers" class="slide">
-                <img src="assets/Captura de pantalla (3252).png" alt="SPYComers" class="slide">
-                <img src="assets/Captura de pantalla (3256).png" alt="SPYComers" class="slide">
-                <img src="assets/Captura de pantalla (3255).png" alt="SPYComers" class="slide">
-              </div>
-
-              <button class="slider-btn next" id="nextSlide" aria-label="Siguiente">›</button>
-            </div>
-
-            <div class="slider-dots" id="sliderDots">
-              <button class="dot active" data-slide="0"></button>
-              <button class="dot" data-slide="1"></button>
-              <button class="dot" data-slide="2"></button>
-              <button class="dot" data-slide="3"></button>
-            </div>
+          <div class="slider-dots" id="sliderDots">
+            <button class="dot active" data-slide="0"></button>
+            <button class="dot" data-slide="1"></button>
+            <button class="dot" data-slide="2"></button>
+            <button class="dot" data-slide="3"></button>
           </div>
         </div>
       </div>
@@ -112,7 +251,7 @@
     <section class="section section-soft" id="beneficios">
   <div class="container">
     <div class="section-heading">
-      <span class="eyebrow eyebrow-blue">¿POR QUÉ ELEGIR SPYCOMERS?</span>
+      <strong>¿POR QUÉ ELEGIR SPYCOMERS?</strong>
       <h2 style="text-align: justify;">
   Más control, más orden y mejor seguimiento.
 </h2>
@@ -126,37 +265,37 @@
     <div class="benefits-grid">
 
       <article class="glass-card">
-        <div class="icon-circle">✓</div>
+        <div class="icon-circle"><i class="bi bi-patch-check-fill"></i></div>
         <h3>Imagen profesional</h3>
         <p>Transmití confianza con un sistema moderno y ordenado frente a tus clientes.</p>
       </article>
 
       <article class="glass-card">
-        <div class="icon-circle">⚡</div>
+        <div class="icon-circle"><i class="bi bi-lightning-charge-fill"></i></div>
         <h3>Ventas más rápidas</h3>
         <p>Agilizá la atención y evitá errores en cada venta.</p>
       </article>
 
       <article class="glass-card">
-        <div class="icon-circle">📦</div>
+        <div class="icon-circle"><i class="bi bi-box-seam-fill"></i></div>
         <h3>Control de stock</h3>
         <p>Sabé siempre qué tenés disponible y evitá pérdidas.</p>
       </article>
 
       <article class="glass-card">
-        <div class="icon-circle">📊</div>
+        <div class="icon-circle"><i class="bi bi-bar-chart-line-fill"></i></div>
         <h3>Reportes claros</h3>
         <p>Tomá decisiones con datos reales de tu negocio.</p>
       </article>
 
       <article class="glass-card">
-        <div class="icon-circle">🧠</div>
+        <div class="icon-circle"><i class="bi bi-lightbulb-fill"></i></div>
         <h3>Fácil de usar</h3>
         <p>No necesitás ser experto, todo es simple e intuitivo.</p>
       </article>
 
       <article class="glass-card">
-        <div class="icon-circle">🔒</div>
+        <div class="icon-circle"><i class="bi bi-shield-lock-fill"></i></div>
         <h3>Mayor control</h3>
         <p>Reducí errores y tené todo organizado en un solo lugar.</p>
       </article>
@@ -176,7 +315,7 @@
     <section class="section" id="modulos">
   <div class="container">
     <div class="section-heading">
-      <span class="eyebrow eyebrow-blue">MÓDULOS</span>
+      <strong>MÓDULOS</strong>
       <h2>Un sistema completo</h2>
       <p>Lo necesario para tener una mejor gestión y control de nu negocio, sin importar dónde estés.</p>
     </div>
@@ -319,11 +458,11 @@
 <section class="section contact-section" id="contacto">
   <div class="container contact-card">
     <div class="contact-copy">
-      <span class="eyebrow eyebrow-blue">CONTACTO</span>
-      <h2>¿Listo para digitalizar tu negocio y pasar al siguiente nivel?</h2>
+      <strong>DEMO GRATIS</strong>
+      <h2>Suscribite y probá SPYComers sin costo</h2>
       <p>
-        Completá el formulario y te contactaremos para mostrarte cómo SPYComers
-        puede ayudarte a organizar mejor tu negocio.
+        Dejanos tu nombre y tu teléfono. Te escribimos por WhatsApp en minutos
+        para coordinar tu demo, sin compromiso.
       </p>
     </div>
 
@@ -339,29 +478,9 @@
             <label for="telefono">Teléfono</label>
             <input type="text" id="telefono" name="telefono" placeholder="Ej: 0981 123 456" required>
           </div>
-
-          <div class="form-group">
-            <label for="empresa">Empresa</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Opcional">
-          </div>
-
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="Opcional">
-          </div>
         </div>
 
-        <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            rows="5"
-            placeholder="Contanos qué tipo de negocio tenés o qué necesitás"
-          ></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block">Enviar por WhatsApp</button>
+        <button type="submit" class="btn btn-primary btn-block">Suscribirme y pedir demo</button>
       </form>
     </div>
   </div>
@@ -369,14 +488,8 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-wrap">
-      <div class="footer-brand">
-        <img src="assets/logo-spycomers.jpg" alt="SPYComers" />
-        <div>
-          <strong>SPYComers</strong>
-        </div>
-      </div>
-      <p>© 2026 SPYComers · Paraguay</p>
+    <div class="container" style="text-align:center;">
+      <p style="margin:0;">© 2026 SPYComers</p>
     </div>
   </footer>
 
